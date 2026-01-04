@@ -1,4 +1,4 @@
-```
+
 # Real-Time Fintech Market Data Pipeline 📈
 
 A high-performance, containerized data engineering pipeline designed to ingest, process, and store live cryptocurrency market data (BTC-USD) using a **Medallion Architecture**.
@@ -78,14 +78,4 @@ The final output is stored in **Parquet** format, which allows for efficient "Ti
 * **Schema Enforcement:** Ensuring data quality in a "Schema-on-Read" environment.
 * **Storage Optimization:** Utilizing Parquet for cost-effective financial data archiving.
 
-```
-
----
-
-### One final touch for your Portfolio:
-To make this look **truly elite**, take a screenshot of your **MinIO screen** showing the `.parquet` files and a screenshot of your **terminal** showing the prices. Put those images in a folder named `screenshots` in your GitHub repo and link them in the README.
-
-**Would you like me to show you how to write a simple "Analytics Script" that reads the Parquet files we just created?** This would be the "Gold" layer—where you actually answer questions like *"What was the average price of Bitcoin in the last hour?"*
-
-```
 
