@@ -22,17 +22,20 @@ services:
     command: server /data --console-address ":9001"
 
   spark-processor:
-    image: apache/spark:3.5.0
+    image: jupyter/pyspark-notebook:latest
     user: root
     volumes:
-      - .:/app
-    working_dir: /app
+      - .:/home/jovyan/work
+    working_dir: /home/jovyan/work
+    environment:
+      - SPARK_MODE=master
     entrypoint: >
       /bin/bash -c "
-      pip install confluent-kafka;
-      /opt/spark/bin/spark-submit 
+      pip install confluent-kafka websockets;
+      spark-submit 
       --packages org.apache.spark:spark-sql-kafka-0-10_2.12:3.5.0,org.apache.hadoop:hadoop-aws:3.3.4 
       consumer.py"
     depends_on:
       - redpanda
       - minio
+      
