@@ -3,7 +3,7 @@ import json
 import websockets
 from confluent_kafka import Producer
 
-# Note: We use localhost:19092 because that's what your docker ps shows!
+# We use localhost:19092
 conf = {'bootstrap.servers': 'localhost:19092'}
 p = Producer(conf)
 
